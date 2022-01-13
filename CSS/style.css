@@ -159,8 +159,8 @@ a {
 
 @media (max-width: 767px) {
     .header .container {
-        /* background: #ececec; */
         background: linear-gradient(to right, var(--main-color), #9fcdf0);
+        background: #fff;
     }
 
     .header .logo {
@@ -184,13 +184,12 @@ a {
         margin: auto;
         display: flex;
         flex-direction: column;
+        height: 0;
+        opacity: 0;
         z-index: 0;
-        transform: translateY(-200px);
         transition: var(--main-transition) linear;
         background-color: #fff;
         width: 100%;
-        height: 150px;
-
     }
 
     .header .main-nav:last-child {
@@ -306,8 +305,9 @@ a {
     }
 
     .header .main-nav.active {
-        transition: var(--main-transition) linear;
-        transform: translateY(0);
+        /* top: 40px; */
+        height: 130px;
+        opacity: 1;
     }
 }
 
@@ -459,6 +459,7 @@ a {
 .landing .go-down i {
     animation: bouncing.5s infinite;
 }
+
 /* typing effect */
 
 .text .intro {
@@ -489,6 +490,18 @@ a {
 
     100% {
         opacity: 1;
+    }
+}
+
+@media (max-width: 991px) {
+    .typing::after {
+        height: 45px;
+    }
+}
+
+@media (max-width: 767px) {
+    .typing::after {
+        height: 22px;
     }
 }
 
